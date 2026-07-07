@@ -1,0 +1,1035 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de Tipos — 200 fontes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <style>
+      :root {
+        --ink-950: #12162a;
+        --ink-850: #1b2036;
+        --ink-750: #242a44;
+        --paper: #fbf9f3;
+        --paper-dim: #efece2;
+        --brass: #c9a227;
+        --brass-dim: #9c7f22;
+        --line: rgba(251, 249, 243, 0.14);
+        --line-strong: rgba(251, 249, 243, 0.28);
+        --radius: 2px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--ink-950);
+        background-image:
+          radial-gradient(circle at 15% 0%, var(--ink-850), transparent 60%),
+          radial-gradient(circle at 85% 100%, var(--ink-850), transparent 55%);
+        color: var(--paper);
+        font-family: "Inter", sans-serif;
+        min-height: 100vh;
+      }
+      ::selection {
+        background: var(--brass);
+        color: var(--ink-950);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      /* ---------- HEADER ---------- */
+      header.top {
+        padding: 56px 40px 32px;
+        border-bottom: 1px solid var(--line);
+        position: relative;
+      }
+      .kicker {
+        font-family: "Space Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--brass);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+      .kicker::before {
+        content: "";
+        width: 22px;
+        height: 1px;
+        background: var(--brass-dim);
+        display: inline-block;
+      }
+      h1.title {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 600;
+        font-size: clamp(36px, 6vw, 64px);
+        line-height: 1.02;
+        margin: 0 0 14px;
+        letter-spacing: -0.01em;
+      }
+      h1.title em {
+        font-style: normal;
+        color: var(--brass);
+      }
+      p.lede {
+        max-width: 620px;
+        font-size: 16px;
+        line-height: 1.55;
+        color: rgba(251, 249, 243, 0.72);
+        margin: 0 0 30px;
+      }
+
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        align-items: center;
+      }
+      .search-wrap {
+        position: relative;
+        flex: 1 1 260px;
+        max-width: 360px;
+      }
+      .search-wrap input {
+        width: 100%;
+        background: transparent;
+        border: 1px solid var(--line-strong);
+        border-radius: var(--radius);
+        color: var(--paper);
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        padding: 11px 14px 11px 36px;
+        outline: none;
+        transition: border-color 0.15s ease;
+      }
+      .search-wrap input:focus-visible {
+        border-color: var(--brass);
+      }
+      .search-wrap input::placeholder {
+        color: rgba(251, 249, 243, 0.4);
+      }
+      .search-wrap svg {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 14px;
+        height: 14px;
+        opacity: 0.5;
+      }
+      .pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .pill {
+        font-family: "Space Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.03em;
+        padding: 9px 14px;
+        border: 1px solid var(--line-strong);
+        border-radius: 999px;
+        background: transparent;
+        color: rgba(251, 249, 243, 0.75);
+        cursor: pointer;
+        transition: all 0.15s ease;
+        white-space: nowrap;
+      }
+      .pill:hover {
+        border-color: var(--brass-dim);
+        color: var(--paper);
+      }
+      .pill:focus-visible {
+        outline: 2px solid var(--brass);
+        outline-offset: 2px;
+      }
+      .pill.active {
+        background: var(--brass);
+        border-color: var(--brass);
+        color: var(--ink-950);
+        font-weight: 700;
+      }
+      .count {
+        margin-left: auto;
+        font-family: "Space Mono", monospace;
+        font-size: 12px;
+        color: rgba(251, 249, 243, 0.45);
+      }
+
+      /* ---------- GRID ---------- */
+      main {
+        padding: 36px 40px 80px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+      .card {
+        background: var(--ink-950);
+        padding: 22px 20px 18px;
+        cursor: pointer;
+        border: none;
+        text-align: left;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        min-height: 168px;
+        position: relative;
+        transition: background 0.15s ease;
+        font-family: "Inter", sans-serif;
+      }
+      .card:hover,
+      .card:focus-visible {
+        background: var(--ink-850);
+        outline: none;
+      }
+      .card:focus-visible {
+        box-shadow: inset 0 0 0 1px var(--brass);
+      }
+      .card .idx {
+        font-family: "Space Mono", monospace;
+        font-size: 11px;
+        color: var(--brass-dim);
+        letter-spacing: 0.05em;
+      }
+      .card .sample {
+        font-size: 44px;
+        line-height: 1;
+        margin: 14px 0 12px;
+        color: var(--paper);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .card .meta {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 8px;
+      }
+      .card .fname {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--paper);
+      }
+      .card .cat {
+        font-family: "Space Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: rgba(251, 249, 243, 0.4);
+        border: 1px solid var(--line-strong);
+        border-radius: 2px;
+        padding: 3px 6px;
+        white-space: nowrap;
+      }
+      .empty {
+        grid-column: 1/-1;
+        background: var(--ink-950);
+        padding: 60px 20px;
+        text-align: center;
+        color: rgba(251, 249, 243, 0.5);
+        font-family: "Space Mono", monospace;
+        font-size: 13px;
+      }
+
+      /* ---------- MODAL ---------- */
+      .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 12, 22, 0.78);
+        backdrop-filter: blur(2px);
+        display: none;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 40px 20px;
+        overflow-y: auto;
+        z-index: 50;
+      }
+      .overlay.open {
+        display: flex;
+      }
+      .sheet {
+        background: var(--paper);
+        color: var(--ink-950);
+        width: 100%;
+        max-width: 800px;
+        border-radius: 3px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+      }
+      .sheet-head {
+        padding: 26px 30px 20px;
+        border-bottom: 1px solid rgba(18, 22, 42, 0.12);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .sheet-head .num {
+        font-family: "Space Mono", monospace;
+        font-size: 11px;
+        color: var(--brass-dim);
+        letter-spacing: 0.05em;
+        display: block;
+        margin-bottom: 6px;
+      }
+      .sheet-head h2 {
+        font-family: "Space Grotesk", sans-serif;
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--ink-950);
+      }
+      .sheet-head .cat-tag {
+        font-family: "Space Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--ink-950);
+        background: var(--paper-dim);
+        border: 1px solid rgba(18, 22, 42, 0.15);
+        padding: 4px 8px;
+        border-radius: 2px;
+        margin-top: 8px;
+        display: inline-block;
+      }
+      .close-btn {
+        background: none;
+        border: 1px solid rgba(18, 22, 42, 0.2);
+        color: var(--ink-950);
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+        flex: 0 0 auto;
+        font-size: 16px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .close-btn:hover {
+        background: rgba(18, 22, 42, 0.08);
+      }
+      .close-btn:focus-visible {
+        outline: 2px solid var(--brass-dim);
+        outline-offset: 2px;
+      }
+
+      .specimen {
+        padding: 8px 30px 26px;
+        border-bottom: 1px solid rgba(18, 22, 42, 0.12);
+      }
+      .specimen .row {
+        margin: 20px 0;
+      }
+      .specimen .tag-label {
+        font-family: "Space Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: rgba(18, 22, 42, 0.4);
+        display: block;
+        margin-bottom: 4px;
+      }
+      .specimen h1,
+      .specimen h2,
+      .specimen h3,
+      .specimen h4,
+      .specimen h5,
+      .specimen h6,
+      .specimen p {
+        margin: 0;
+        color: var(--ink-950);
+      }
+      .specimen .sh1 {
+        font-size: 40px;
+        line-height: 1.1;
+      }
+      .specimen .sh2 {
+        font-size: 32px;
+        line-height: 1.15;
+      }
+      .specimen .sh3 {
+        font-size: 26px;
+        line-height: 1.2;
+      }
+      .specimen .sh4 {
+        font-size: 21px;
+        line-height: 1.25;
+      }
+      .specimen .sh5 {
+        font-size: 17px;
+        line-height: 1.3;
+      }
+      .specimen .sh6 {
+        font-size: 14px;
+        line-height: 1.3;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .specimen .sp {
+        font-size: 16px;
+        line-height: 1.6;
+        max-width: 64ch;
+      }
+      .specimen .sib {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .code-block {
+        padding: 24px 30px 30px;
+      }
+      .code-block .tag-label {
+        font-family: "Space Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: rgba(18, 22, 42, 0.4);
+        display: block;
+        margin-bottom: 8px;
+      }
+      pre.code {
+        background: var(--ink-950);
+        color: #dfe3f0;
+        font-family: "Space Mono", monospace;
+        font-size: 12.5px;
+        line-height: 1.7;
+        padding: 18px 18px;
+        border-radius: 2px;
+        overflow-x: auto;
+        margin: 0 0 14px;
+        white-space: pre;
+      }
+      pre.code .c1 {
+        color: #7d8bb0;
+      }
+      pre.code .c2 {
+        color: var(--brass);
+      }
+      .copy-btn {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        background: var(--ink-950);
+        color: var(--paper);
+        border: 1px solid var(--ink-950);
+        padding: 11px 18px;
+        border-radius: 2px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition:
+          background 0.15s ease,
+          transform 0.1s ease;
+      }
+      .copy-btn:hover {
+        background: var(--ink-850);
+      }
+      .copy-btn:active {
+        transform: scale(0.97);
+      }
+      .copy-btn:focus-visible {
+        outline: 2px solid var(--brass-dim);
+        outline-offset: 2px;
+      }
+      .copy-btn.copied {
+        background: #3d6b4f;
+        border-color: #3d6b4f;
+      }
+
+      footer {
+        padding: 26px 40px 50px;
+        font-family: "Space Mono", monospace;
+        font-size: 11px;
+        color: rgba(251, 249, 243, 0.35);
+        border-top: 1px solid var(--line);
+      }
+
+      @media (max-width: 640px) {
+        header.top {
+          padding: 40px 20px 24px;
+        }
+        main {
+          padding: 24px 20px 60px;
+        }
+        .grid {
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+        .card .sample {
+          font-size: 32px;
+        }
+        .sheet-head,
+        .specimen,
+        .code-block {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        .count {
+          margin-left: 0;
+          width: 100%;
+          order: 99;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="top">
+      <div class="kicker">
+        Especime tipográfico · 200 famílias (Feito com IA)
+      </div>
+      <h1 class="title">Catálogo de <em>Tipos</em></h1>
+      <p class="lede">
+        Filtre por estilo ou nome, clique numa fonte para ver o especime
+        completo (H1–H6, parágrafo, itálico e negrito) e copie o link + CSS
+        prontos para usar.
+      </p>
+
+      <div class="controls">
+        <div class="search-wrap">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2">
+            <circle cx="11" cy="11" r="7" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Buscar fonte pelo nome…"
+            autocomplete="off" />
+        </div>
+        <div class="pills" id="pillsWrap">
+          <button class="pill active" data-cat="all">Todas</button>
+          <button class="pill" data-cat="sans">Sans-serif</button>
+          <button class="pill" data-cat="serif">Serifada</button>
+          <button class="pill" data-cat="display">Display</button>
+          <button class="pill" data-cat="hand">Manuscrita</button>
+          <button class="pill" data-cat="mono">Monoespaçada</button>
+        </div>
+        <div class="count" id="countLabel">200 fontes</div>
+      </div>
+    </header>
+
+    <main>
+      <div class="grid" id="grid"></div>
+    </main>
+
+    <footer>
+      Fontes servidas via Google Fonts · clique em qualquer especime para ver
+      detalhes e copiar o código
+    </footer>
+
+    <div class="overlay" id="overlay">
+      <div class="sheet" id="sheet" role="dialog" aria-modal="true">
+        <div class="sheet-head">
+          <div>
+            <span class="num" id="sheetNum">Nº 00</span>
+            <h2 id="sheetName">Nome da fonte</h2>
+            <span class="cat-tag" id="sheetCat">categoria</span>
+          </div>
+          <button class="close-btn" id="closeBtn" aria-label="Fechar">✕</button>
+        </div>
+
+        <div class="specimen" id="specimenWrap">
+          <div class="row">
+            <span class="tag-label">&lt;h1&gt;</span>
+            <h1 class="sh1" id="s-h1">Título principal Ag 123</h1>
+          </div>
+          <div class="row">
+            <span class="tag-label">&lt;h2&gt;</span>
+            <h2 class="sh2" id="s-h2">Subtítulo de seção Ag</h2>
+          </div>
+          <div class="row">
+            <span class="tag-label">&lt;h3&gt;</span>
+            <h3 class="sh3" id="s-h3">Título de bloco Ag</h3>
+          </div>
+          <div class="row">
+            <span class="tag-label">&lt;h4&gt;</span>
+            <h4 class="sh4" id="s-h4">Título menor Ag</h4>
+          </div>
+          <div class="row">
+            <span class="tag-label">&lt;h5&gt;</span>
+            <h5 class="sh5" id="s-h5">Rótulo destacado Ag</h5>
+          </div>
+          <div class="row">
+            <span class="tag-label">&lt;h6&gt;</span>
+            <h6 class="sh6" id="s-h6">Legenda em caixa alta</h6>
+          </div>
+          <div class="row">
+            <span class="tag-label">&lt;p&gt;</span>
+            <p class="sp" id="s-p">
+              Este é um parágrafo de exemplo para você avaliar como o corpo de
+              texto se comporta nesta fonte, incluindo espaçamento entre linhas
+              e legibilidade em tamanhos menores.
+            </p>
+          </div>
+          <div class="row">
+            <span class="tag-label">&lt;i&gt;</span>
+            <p class="sib" id="s-i">
+              <i
+                >Este trecho está em itálico para mostrar a variação inclinada
+                da fonte.</i
+              >
+            </p>
+          </div>
+          <div class="row">
+            <span class="tag-label">&lt;b&gt;</span>
+            <p class="sib" id="s-b">
+              <b
+                >Este trecho está em negrito para mostrar o peso mais forte da
+                fonte.</b
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="code-block">
+          <span class="tag-label">Link + CSS</span>
+          <pre class="code" id="codeText"></pre>
+          <button class="copy-btn" id="copyBtn">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path
+                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            <span id="copyLabel">Copiar link + CSS</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ---------- DADOS: 200 fontes ----------
+      const FONTS = [
+        { n: "Inter", c: "sans", ital: true },
+        { n: "Roboto", c: "sans", ital: true },
+        { n: "Open Sans", c: "sans", ital: true },
+        { n: "Lato", c: "sans", ital: true },
+        { n: "Montserrat", c: "sans", ital: true },
+        { n: "Poppins", c: "sans", ital: true },
+        { n: "Nunito", c: "sans", ital: true },
+        { n: "Work Sans", c: "sans", ital: true },
+        { n: "Rubik", c: "sans", ital: true },
+        { n: "Manrope", c: "sans", ital: false },
+        { n: "Karla", c: "sans", ital: true },
+        { n: "Mulish", c: "sans", ital: true },
+        { n: "Raleway", c: "sans", ital: true },
+        { n: "DM Sans", c: "sans", ital: true },
+        { n: "Space Grotesk", c: "sans", ital: false },
+        { n: "Barlow", c: "sans", ital: true },
+        { n: "Heebo", c: "sans", ital: false },
+        { n: "Titillium Web", c: "sans", ital: true },
+        { n: "PT Sans", c: "sans", ital: true },
+        { n: "Noto Sans", c: "sans", ital: true },
+        { n: "Source Sans 3", c: "sans", ital: true },
+        { n: "IBM Plex Sans", c: "sans", ital: true },
+        { n: "Overpass", c: "sans", ital: true },
+        { n: "Josefin Sans", c: "sans", ital: true },
+        { n: "Quicksand", c: "sans", ital: false },
+        { n: "Cabin", c: "sans", ital: true },
+        { n: "Hind", c: "sans", ital: false },
+        { n: "Assistant", c: "sans", ital: false },
+        { n: "Fira Sans", c: "sans", ital: true },
+        { n: "Archivo", c: "sans", ital: true },
+        { n: "Jost", c: "sans", ital: true },
+        { n: "Sora", c: "sans", ital: false },
+        { n: "Outfit", c: "sans", ital: false },
+        { n: "Red Hat Display", c: "sans", ital: true },
+        { n: "Plus Jakarta Sans", c: "sans", ital: true },
+        { n: "Urbanist", c: "sans", ital: true },
+        { n: "Public Sans", c: "sans", ital: true },
+        { n: "Epilogue", c: "sans", ital: true },
+        { n: "Figtree", c: "sans", ital: false },
+        { n: "Albert Sans", c: "sans", ital: true },
+        { n: "Onest", c: "sans", ital: false },
+        { n: "Geologica", c: "sans", ital: false },
+        { n: "Instrument Sans", c: "sans", ital: true },
+
+        { n: "Playfair Display", c: "serif", ital: true },
+        { n: "Merriweather", c: "serif", ital: true },
+        { n: "Lora", c: "serif", ital: true },
+        { n: "PT Serif", c: "serif", ital: true },
+        { n: "Source Serif 4", c: "serif", ital: true },
+        { n: "Crimson Text", c: "serif", ital: true },
+        { n: "Libre Baskerville", c: "serif", ital: true },
+        { n: "Cormorant Garamond", c: "serif", ital: true },
+        { n: "EB Garamond", c: "serif", ital: true },
+        { n: "Bitter", c: "serif", ital: true },
+        { n: "Noto Serif", c: "serif", ital: true },
+        { n: "Domine", c: "serif", ital: false },
+        { n: "Vollkorn", c: "serif", ital: true },
+        { n: "Spectral", c: "serif", ital: true },
+        { n: "Rokkitt", c: "serif", ital: false },
+        { n: "Bree Serif", c: "serif", ital: false },
+        { n: "Zilla Slab", c: "serif", ital: true },
+        { n: "Alegreya", c: "serif", ital: true },
+        { n: "Cardo", c: "serif", ital: true },
+        { n: "Faustina", c: "serif", ital: true },
+        { n: "Cormorant", c: "serif", ital: true },
+        { n: "IBM Plex Serif", c: "serif", ital: true },
+        { n: "Frank Ruhl Libre", c: "serif", ital: false },
+        { n: "Literata", c: "serif", ital: true },
+        { n: "Neuton", c: "serif", ital: true },
+        { n: "Old Standard TT", c: "serif", ital: true },
+        { n: "Gelasio", c: "serif", ital: true },
+        { n: "Petrona", c: "serif", ital: true },
+        { n: "Prata", c: "serif", ital: false },
+        { n: "Marcellus", c: "serif", ital: false },
+        { n: "Cinzel", c: "serif", ital: false },
+        { n: "Vidaloka", c: "serif", ital: false },
+        { n: "Fauna One", c: "serif", ital: false },
+        { n: "Lusitana", c: "serif", ital: false },
+        { n: "Arvo", c: "serif", ital: false },
+        { n: "Slabo 27px", c: "serif", ital: false },
+        { n: "Cutive", c: "serif", ital: false },
+        { n: "Judson", c: "serif", ital: true },
+        { n: "Trirong", c: "serif", ital: true },
+        { n: "Rasa", c: "serif", ital: true },
+
+        { n: "Bebas Neue", c: "display", ital: false },
+        { n: "Oswald", c: "display", ital: false },
+        { n: "Anton", c: "display", ital: false },
+        { n: "Abril Fatface", c: "display", ital: false },
+        { n: "Righteous", c: "display", ital: false },
+        { n: "Alfa Slab One", c: "display", ital: false },
+        { n: "Passion One", c: "display", ital: false },
+        { n: "Fjalla One", c: "display", ital: false },
+        { n: "Archivo Black", c: "display", ital: false },
+        { n: "Staatliches", c: "display", ital: false },
+        { n: "Rammetto One", c: "display", ital: false },
+        { n: "Bungee", c: "display", ital: false },
+        { n: "Bangers", c: "display", ital: false },
+        { n: "Fredoka", c: "display", ital: false },
+        { n: "Baloo 2", c: "display", ital: false },
+        { n: "Lobster", c: "display", ital: false },
+        { n: "Bowlby One", c: "display", ital: false },
+        { n: "Chewy", c: "display", ital: false },
+        { n: "Luckiest Guy", c: "display", ital: false },
+        { n: "Sigmar One", c: "display", ital: false },
+        { n: "Titan One", c: "display", ital: false },
+        { n: "Shrikhand", c: "display", ital: false },
+        { n: "Bungee Shade", c: "display", ital: false },
+        { n: "Bungee Inline", c: "display", ital: false },
+        { n: "Monoton", c: "display", ital: false },
+        { n: "Patua One", c: "display", ital: false },
+        { n: "Boogaloo", c: "display", ital: false },
+        { n: "Modak", c: "display", ital: false },
+        { n: "Rampart One", c: "display", ital: false },
+        { n: "Fascinate", c: "display", ital: false },
+        { n: "Miltonian", c: "display", ital: false },
+        { n: "Big Shoulders Display", c: "display", ital: false },
+        { n: "Yeseva One", c: "display", ital: false },
+        { n: "Ultra", c: "display", ital: false },
+        { n: "Graduate", c: "display", ital: false },
+        { n: "Special Elite", c: "display", ital: false },
+        { n: "Black Ops One", c: "display", ital: false },
+        { n: "Racing Sans One", c: "display", ital: false },
+        { n: "Squada One", c: "display", ital: false },
+        { n: "Changa One", c: "display", ital: false },
+
+        { n: "Pacifico", c: "hand", ital: false },
+        { n: "Dancing Script", c: "hand", ital: false },
+        { n: "Caveat", c: "hand", ital: false },
+        { n: "Sacramento", c: "hand", ital: false },
+        { n: "Satisfy", c: "hand", ital: false },
+        { n: "Kalam", c: "hand", ital: false },
+        { n: "Shadows Into Light", c: "hand", ital: false },
+        { n: "Great Vibes", c: "hand", ital: false },
+        { n: "Indie Flower", c: "hand", ital: false },
+        { n: "Amatic SC", c: "hand", ital: false },
+        { n: "Kaushan Script", c: "hand", ital: false },
+        { n: "Permanent Marker", c: "hand", ital: false },
+        { n: "Homemade Apple", c: "hand", ital: false },
+        { n: "Marck Script", c: "hand", ital: false },
+        { n: "Yellowtail", c: "hand", ital: false },
+        { n: "Cookie", c: "hand", ital: false },
+        { n: "Handlee", c: "hand", ital: false },
+        { n: "Architects Daughter", c: "hand", ital: false },
+        { n: "Gochi Hand", c: "hand", ital: false },
+        { n: "Patrick Hand", c: "hand", ital: false },
+        { n: "Reenie Beanie", c: "hand", ital: false },
+        { n: "Nanum Pen Script", c: "hand", ital: false },
+        { n: "Rock Salt", c: "hand", ital: false },
+        { n: "Covered By Your Grace", c: "hand", ital: false },
+        { n: "Neucha", c: "hand", ital: false },
+        { n: "Courgette", c: "hand", ital: false },
+        { n: "Allura", c: "hand", ital: false },
+        { n: "Parisienne", c: "hand", ital: false },
+        { n: "Tangerine", c: "hand", ital: false },
+        { n: "Alex Brush", c: "hand", ital: false },
+        { n: "Pinyon Script", c: "hand", ital: false },
+        { n: "Norican", c: "hand", ital: false },
+        { n: "Mr Dafoe", c: "hand", ital: false },
+        { n: "La Belle Aurore", c: "hand", ital: false },
+        { n: "Give You Glory", c: "hand", ital: false },
+        { n: "Waiting for the Sunrise", c: "hand", ital: false },
+        { n: "Sriracha", c: "hand", ital: false },
+        { n: "Caveat Brush", c: "hand", ital: false },
+        { n: "Playball", c: "hand", ital: false },
+        { n: "Delius", c: "hand", ital: false },
+
+        { n: "Roboto Mono", c: "mono", ital: true },
+        { n: "Source Code Pro", c: "mono", ital: true },
+        { n: "JetBrains Mono", c: "mono", ital: true },
+        { n: "IBM Plex Mono", c: "mono", ital: true },
+        { n: "Space Mono", c: "mono", ital: true },
+        { n: "Fira Code", c: "mono", ital: false },
+        { n: "Inconsolata", c: "mono", ital: false },
+        { n: "Courier Prime", c: "mono", ital: true },
+        { n: "Ubuntu Mono", c: "mono", ital: true },
+        { n: "PT Mono", c: "mono", ital: false },
+        { n: "Fira Mono", c: "mono", ital: false },
+        { n: "Cousine", c: "mono", ital: true },
+        { n: "Anonymous Pro", c: "mono", ital: true },
+        { n: "VT323", c: "mono", ital: false },
+        { n: "Share Tech Mono", c: "mono", ital: false },
+        { n: "Nova Mono", c: "mono", ital: false },
+        { n: "DM Mono", c: "mono", ital: true },
+        { n: "Overpass Mono", c: "mono", ital: false },
+        { n: "Red Hat Mono", c: "mono", ital: true },
+        { n: "Spline Sans Mono", c: "mono", ital: true },
+        { n: "Azeret Mono", c: "mono", ital: true },
+        { n: "Martian Mono", c: "mono", ital: false },
+        { n: "B612 Mono", c: "mono", ital: true },
+        { n: "Chivo Mono", c: "mono", ital: true },
+        { n: "Fragment Mono", c: "mono", ital: true },
+        { n: "Major Mono Display", c: "mono", ital: false },
+        { n: "Syne Mono", c: "mono", ital: false },
+        { n: "Sixtyfour", c: "mono", ital: false },
+        { n: "Oxygen Mono", c: "mono", ital: false },
+        { n: "Noto Sans Mono", c: "mono", ital: false },
+        { n: "Xanh Mono", c: "mono", ital: false },
+        { n: "Sono", c: "mono", ital: false },
+        { n: "Kode Mono", c: "mono", ital: false },
+        { n: "Nanum Gothic Coding", c: "mono", ital: false },
+        { n: "M PLUS 1 Code", c: "mono", ital: false },
+        { n: "Cutive Mono", c: "mono", ital: false },
+        { n: "Reddit Mono", c: "mono", ital: true },
+      ];
+
+      const CAT_LABEL = {
+        sans: "Sans-serif",
+        serif: "Serifada",
+        display: "Display",
+        hand: "Manuscrita",
+        mono: "Monoespaçada",
+      };
+      const CAT_FALLBACK = {
+        sans: "sans-serif",
+        serif: "serif",
+        display: "sans-serif",
+        hand: "cursive",
+        mono: "monospace",
+      };
+
+      function slug(name) {
+        return name.replace(/\s+/g, "+");
+      }
+
+      function fontUrlParam(f) {
+        return f.ital
+          ? `family=${slug(f.n)}:ital,wght@0,400;0,700;1,400`
+          : `family=${slug(f.n)}:wght@400;700`;
+      }
+
+      function individualLink(f) {
+        return `https://fonts.googleapis.com/css2?${fontUrlParam(f)}&display=swap`;
+      }
+
+      // ---------- Carrega todas as 200 fontes de uma vez para os cards ----------
+      (function loadAllFonts() {
+        const params = FONTS.map(fontUrlParam).join("&");
+        const href = `https://fonts.googleapis.com/css2?${params}&display=swap`;
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = href;
+        document.head.appendChild(link);
+      })();
+
+      // ---------- Render da grade ----------
+      const grid = document.getElementById("grid");
+      const countLabel = document.getElementById("countLabel");
+      let activeCat = "all";
+      let query = "";
+
+      function renderGrid() {
+        const filtered = FONTS.filter((f) => {
+          const matchCat = activeCat === "all" || f.c === activeCat;
+          const matchQuery = f.n.toLowerCase().includes(query.toLowerCase());
+          return matchCat && matchQuery;
+        });
+
+        countLabel.textContent = `${filtered.length} fonte${filtered.length === 1 ? "" : "s"}`;
+
+        if (filtered.length === 0) {
+          grid.innerHTML = `<div class="empty">Nenhuma fonte encontrada para esse filtro.</div>`;
+          return;
+        }
+
+        grid.innerHTML = filtered
+          .map((f) => {
+            const idx = FONTS.indexOf(f) + 1;
+            return `
+      <button class="card" data-name="${f.n}" style="font-family:'${f.n}', ${CAT_FALLBACK[f.c]}">
+        <span class="idx">Nº ${String(idx).padStart(2, "0")}</span>
+        <span class="sample" style="font-family:'${f.n}', ${CAT_FALLBACK[f.c]}">Ag</span>
+        <span class="meta">
+          <span class="fname">${f.n}</span>
+          <span class="cat">${CAT_LABEL[f.c]}</span>
+        </span>
+      </button>
+    `;
+          })
+          .join("");
+      }
+
+      document.getElementById("searchInput").addEventListener("input", (e) => {
+        query = e.target.value;
+        renderGrid();
+      });
+
+      document.getElementById("pillsWrap").addEventListener("click", (e) => {
+        const btn = e.target.closest(".pill");
+        if (!btn) return;
+        document
+          .querySelectorAll(".pill")
+          .forEach((p) => p.classList.remove("active"));
+        btn.classList.add("active");
+        activeCat = btn.dataset.cat;
+        renderGrid();
+      });
+
+      // ---------- Modal ----------
+      const overlay = document.getElementById("overlay");
+      const sheetNum = document.getElementById("sheetNum");
+      const sheetName = document.getElementById("sheetName");
+      const sheetCat = document.getElementById("sheetCat");
+      const specimenWrap = document.getElementById("specimenWrap");
+      const codeText = document.getElementById("codeText");
+      const copyBtn = document.getElementById("copyBtn");
+      const copyLabel = document.getElementById("copyLabel");
+
+      let lastFocused = null;
+
+      function openModal(f) {
+        const idx = FONTS.indexOf(f) + 1;
+        const fallback = CAT_FALLBACK[f.c];
+        const stack = `'${f.n}', ${fallback}`;
+
+        sheetNum.textContent = `Nº ${String(idx).padStart(2, "0")}`;
+        sheetName.textContent = f.n;
+        sheetName.style.fontFamily = stack;
+        sheetCat.textContent = CAT_LABEL[f.c];
+
+        specimenWrap.style.fontFamily = stack;
+
+        const link = individualLink(f);
+        const escapedLink = link.replace(/&/g, "&amp;");
+        codeText.innerHTML = `<span class="c1">&lt;!-- 1. adicione no &lt;head&gt; --&gt;</span>
+&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+&lt;link href="${escapedLink}" rel="stylesheet"&gt;
+
+<span class="c1">/* 2. use no seu CSS */</span>
+<span class="c2">font-family</span>: '${f.n}', ${fallback};`;
+
+        copyBtn.dataset.payload = `<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="${link}" rel="stylesheet">
+
+/* CSS */
+font-family: '${f.n}', ${fallback};`;
+
+        copyBtn.classList.remove("copied");
+        copyLabel.textContent = "Copiar link + CSS";
+
+        overlay.classList.add("open");
+        lastFocused = document.activeElement;
+        document.getElementById("closeBtn").focus();
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        overlay.classList.remove("open");
+        document.body.style.overflow = "";
+        if (lastFocused) lastFocused.focus();
+      }
+
+      grid.addEventListener("click", (e) => {
+        const card = e.target.closest(".card");
+        if (!card) return;
+        const f = FONTS.find((x) => x.n === card.dataset.name);
+        if (f) openModal(f);
+      });
+
+      document.getElementById("closeBtn").addEventListener("click", closeModal);
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) closeModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && overlay.classList.contains("open"))
+          closeModal();
+      });
+
+      copyBtn.addEventListener("click", async () => {
+        const text = copyBtn.dataset.payload || "";
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch (err) {
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+        }
+        copyBtn.classList.add("copied");
+        copyLabel.textContent = "Copiado ✓";
+        setTimeout(() => {
+          copyBtn.classList.remove("copied");
+          copyLabel.textContent = "Copiar link + CSS";
+        }, 1800);
+      });
+
+      renderGrid();
+    </script>
+  </body>
+</html>
