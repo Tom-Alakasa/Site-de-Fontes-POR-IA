@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Catálogo de Tipos — 200 fontes</title>
+    <title>Catálogo de Tipos — 350 fontes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,16 +18,13 @@
         --paper-dim: #efece2;
         --brass: #c9a227;
         --brass-dim: #9c7f22;
+        --star: #e0b93a;
         --line: rgba(251, 249, 243, 0.14);
         --line-strong: rgba(251, 249, 243, 0.28);
         --radius: 2px;
       }
-      * {
-        box-sizing: border-box;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
       body {
         margin: 0;
         background: var(--ink-950);
@@ -38,14 +35,8 @@
         font-family: "Inter", sans-serif;
         min-height: 100vh;
       }
-      ::selection {
-        background: var(--brass);
-        color: var(--ink-950);
-      }
-
-      a {
-        color: inherit;
-      }
+      ::selection { background: var(--brass); color: var(--ink-950); }
+      a { color: inherit; }
 
       /* ---------- HEADER ---------- */
       header.top {
@@ -79,12 +70,9 @@
         margin: 0 0 14px;
         letter-spacing: -0.01em;
       }
-      h1.title em {
-        font-style: normal;
-        color: var(--brass);
-      }
+      h1.title em { font-style: normal; color: var(--brass); }
       p.lede {
-        max-width: 620px;
+        max-width: 640px;
         font-size: 16px;
         line-height: 1.55;
         color: rgba(251, 249, 243, 0.72);
@@ -97,11 +85,7 @@
         gap: 14px;
         align-items: center;
       }
-      .search-wrap {
-        position: relative;
-        flex: 1 1 260px;
-        max-width: 360px;
-      }
+      .search-wrap { position: relative; flex: 1 1 260px; max-width: 360px; }
       .search-wrap input {
         width: 100%;
         background: transparent;
@@ -114,12 +98,8 @@
         outline: none;
         transition: border-color 0.15s ease;
       }
-      .search-wrap input:focus-visible {
-        border-color: var(--brass);
-      }
-      .search-wrap input::placeholder {
-        color: rgba(251, 249, 243, 0.4);
-      }
+      .search-wrap input:focus-visible { border-color: var(--brass); }
+      .search-wrap input::placeholder { color: rgba(251, 249, 243, 0.4); }
       .search-wrap svg {
         position: absolute;
         left: 12px;
@@ -129,11 +109,7 @@
         height: 14px;
         opacity: 0.5;
       }
-      .pills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
+      .pills { display: flex; flex-wrap: wrap; gap: 8px; }
       .pill {
         font-family: "Space Mono", monospace;
         font-size: 12px;
@@ -147,20 +123,36 @@
         transition: all 0.15s ease;
         white-space: nowrap;
       }
-      .pill:hover {
-        border-color: var(--brass-dim);
-        color: var(--paper);
-      }
-      .pill:focus-visible {
-        outline: 2px solid var(--brass);
-        outline-offset: 2px;
-      }
+      .pill:hover { border-color: var(--brass-dim); color: var(--paper); }
+      .pill:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
       .pill.active {
         background: var(--brass);
         border-color: var(--brass);
         color: var(--ink-950);
         font-weight: 700;
       }
+
+      select.sortSelect, button.tool-btn {
+        font-family: "Space Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.03em;
+        padding: 9px 14px;
+        border: 1px solid var(--line-strong);
+        border-radius: 999px;
+        background: transparent;
+        color: rgba(251, 249, 243, 0.75);
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      select.sortSelect { -webkit-appearance: none; appearance: none; }
+      select.sortSelect:focus-visible, button.tool-btn:focus-visible {
+        outline: 2px solid var(--brass);
+        outline-offset: 2px;
+        border-color: var(--brass);
+      }
+      button.tool-btn:hover { border-color: var(--brass-dim); color: var(--paper); }
+      select.sortSelect option { background: var(--ink-850); color: var(--paper); }
+
       .count {
         margin-left: auto;
         font-family: "Space Mono", monospace;
@@ -168,10 +160,44 @@
         color: rgba(251, 249, 243, 0.45);
       }
 
-      /* ---------- GRID ---------- */
-      main {
-        padding: 36px 40px 80px;
+      .second-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        align-items: center;
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px dashed var(--line);
       }
+      .size-wrap {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "Space Mono", monospace;
+        font-size: 11px;
+        color: rgba(251, 249, 243, 0.5);
+      }
+      .size-wrap input[type="range"] {
+        width: 130px;
+        accent-color: var(--brass);
+      }
+      .text-wrap { flex: 1 1 260px; max-width: 420px; position: relative; }
+      .text-wrap input {
+        width: 100%;
+        background: transparent;
+        border: 1px solid var(--line-strong);
+        border-radius: var(--radius);
+        color: var(--paper);
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+        padding: 9px 12px;
+        outline: none;
+      }
+      .text-wrap input:focus-visible { border-color: var(--brass); }
+      .text-wrap input::placeholder { color: rgba(251, 249, 243, 0.4); }
+
+      /* ---------- GRID ---------- */
+      main { padding: 36px 40px 80px; }
       .grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -193,20 +219,29 @@
         transition: background 0.15s ease;
         font-family: "Inter", sans-serif;
       }
-      .card:hover,
-      .card:focus-visible {
-        background: var(--ink-850);
-        outline: none;
-      }
-      .card:focus-visible {
-        box-shadow: inset 0 0 0 1px var(--brass);
-      }
+      .card:hover, .card:focus-visible { background: var(--ink-850); outline: none; }
+      .card:focus-visible { box-shadow: inset 0 0 0 1px var(--brass); }
       .card .idx {
         font-family: "Space Mono", monospace;
         font-size: 11px;
         color: var(--brass-dim);
         letter-spacing: 0.05em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
+      .fav-btn {
+        background: none;
+        border: none;
+        color: rgba(251, 249, 243, 0.3);
+        font-size: 15px;
+        cursor: pointer;
+        line-height: 1;
+        padding: 2px;
+      }
+      .fav-btn:hover { color: var(--star); }
+      .fav-btn.on { color: var(--star); }
+      .fav-btn:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; border-radius: 2px; }
       .card .sample {
         font-size: 44px;
         line-height: 1;
@@ -263,9 +298,7 @@
         overflow-y: auto;
         z-index: 50;
       }
-      .overlay.open {
-        display: flex;
-      }
+      .overlay.open { display: flex; }
       .sheet {
         background: var(--paper);
         color: var(--ink-950);
@@ -274,6 +307,7 @@
         border-radius: 3px;
         box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
         overflow: hidden;
+        position: relative;
       }
       .sheet-head {
         padding: 26px 30px 20px;
@@ -288,7 +322,9 @@
         font-size: 11px;
         color: var(--brass-dim);
         letter-spacing: 0.05em;
-        display: block;
+        display: flex;
+        align-items: center;
+        gap: 10px;
         margin-bottom: 6px;
       }
       .sheet-head h2 {
@@ -311,7 +347,8 @@
         margin-top: 8px;
         display: inline-block;
       }
-      .close-btn {
+      .head-actions { display: flex; gap: 8px; align-items: flex-start; }
+      .close-btn, .nav-btn, .fav-btn-modal {
         background: none;
         border: 1px solid rgba(18, 22, 42, 0.2);
         color: var(--ink-950);
@@ -320,27 +357,46 @@
         border-radius: 50%;
         cursor: pointer;
         flex: 0 0 auto;
-        font-size: 16px;
+        font-size: 15px;
         line-height: 1;
         display: flex;
         align-items: center;
         justify-content: center;
       }
-      .close-btn:hover {
-        background: rgba(18, 22, 42, 0.08);
-      }
-      .close-btn:focus-visible {
+      .close-btn:hover, .nav-btn:hover, .fav-btn-modal:hover { background: rgba(18, 22, 42, 0.08); }
+      .close-btn:focus-visible, .nav-btn:focus-visible, .fav-btn-modal:focus-visible {
         outline: 2px solid var(--brass-dim);
         outline-offset: 2px;
       }
-
-      .specimen {
-        padding: 8px 30px 26px;
+      .fav-btn-modal.on { color: var(--brass-dim); border-color: var(--brass-dim); }
+      .nav-strip {
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 14px;
+        background: var(--paper-dim);
         border-bottom: 1px solid rgba(18, 22, 42, 0.12);
       }
-      .specimen .row {
-        margin: 20px 0;
+      .nav-strip button {
+        font-family: "Space Mono", monospace;
+        font-size: 11px;
+        background: none;
+        border: 1px solid rgba(18, 22, 42, 0.2);
+        border-radius: 999px;
+        padding: 7px 13px;
+        cursor: pointer;
+        color: var(--ink-950);
+        display: flex;
+        align-items: center;
+        gap: 6px;
       }
+      .nav-strip button:hover { background: rgba(18, 22, 42, 0.06); }
+      .nav-strip button:focus-visible { outline: 2px solid var(--brass-dim); outline-offset: 2px; }
+      .nav-strip button:disabled { opacity: 0.35; cursor: default; }
+
+      .specimen { padding: 8px 30px 26px; border-bottom: 1px solid rgba(18, 22, 42, 0.12); }
+      .specimen .row { margin: 20px 0; }
       .specimen .tag-label {
         font-family: "Space Mono", monospace;
         font-size: 10px;
@@ -350,55 +406,20 @@
         display: block;
         margin-bottom: 4px;
       }
-      .specimen h1,
-      .specimen h2,
-      .specimen h3,
-      .specimen h4,
-      .specimen h5,
-      .specimen h6,
-      .specimen p {
+      .specimen h1, .specimen h2, .specimen h3, .specimen h4, .specimen h5, .specimen h6, .specimen p {
         margin: 0;
         color: var(--ink-950);
       }
-      .specimen .sh1 {
-        font-size: 40px;
-        line-height: 1.1;
-      }
-      .specimen .sh2 {
-        font-size: 32px;
-        line-height: 1.15;
-      }
-      .specimen .sh3 {
-        font-size: 26px;
-        line-height: 1.2;
-      }
-      .specimen .sh4 {
-        font-size: 21px;
-        line-height: 1.25;
-      }
-      .specimen .sh5 {
-        font-size: 17px;
-        line-height: 1.3;
-      }
-      .specimen .sh6 {
-        font-size: 14px;
-        line-height: 1.3;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-      }
-      .specimen .sp {
-        font-size: 16px;
-        line-height: 1.6;
-        max-width: 64ch;
-      }
-      .specimen .sib {
-        font-size: 16px;
-        line-height: 1.6;
-      }
+      .specimen .sh1 { font-size: 40px; line-height: 1.1; }
+      .specimen .sh2 { font-size: 32px; line-height: 1.15; }
+      .specimen .sh3 { font-size: 26px; line-height: 1.2; }
+      .specimen .sh4 { font-size: 21px; line-height: 1.25; }
+      .specimen .sh5 { font-size: 17px; line-height: 1.3; }
+      .specimen .sh6 { font-size: 14px; line-height: 1.3; text-transform: uppercase; letter-spacing: 0.04em; }
+      .specimen .sp { font-size: 16px; line-height: 1.6; max-width: 64ch; }
+      .specimen .sib { font-size: 16px; line-height: 1.6; }
 
-      .code-block {
-        padding: 24px 30px 30px;
-      }
+      .code-block { padding: 24px 30px 30px; }
       .code-block .tag-label {
         font-family: "Space Mono", monospace;
         font-size: 10px;
@@ -420,12 +441,8 @@
         margin: 0 0 14px;
         white-space: pre;
       }
-      pre.code .c1 {
-        color: #7d8bb0;
-      }
-      pre.code .c2 {
-        color: var(--brass);
-      }
+      pre.code .c1 { color: #7d8bb0; }
+      pre.code .c2 { color: var(--brass); }
       .copy-btn {
         font-family: "Space Grotesk", sans-serif;
         font-weight: 600;
@@ -439,24 +456,31 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        transition:
-          background 0.15s ease,
-          transform 0.1s ease;
+        transition: background 0.15s ease, transform 0.1s ease;
       }
-      .copy-btn:hover {
+      .copy-btn:hover { background: var(--ink-850); }
+      .copy-btn:active { transform: scale(0.97); }
+      .copy-btn:focus-visible { outline: 2px solid var(--brass-dim); outline-offset: 2px; }
+      .copy-btn.copied { background: #3d6b4f; border-color: #3d6b4f; }
+
+      .toast {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
         background: var(--ink-850);
+        border: 1px solid var(--line-strong);
+        color: var(--paper);
+        font-family: "Space Mono", monospace;
+        font-size: 12px;
+        padding: 10px 18px;
+        border-radius: 999px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        z-index: 100;
       }
-      .copy-btn:active {
-        transform: scale(0.97);
-      }
-      .copy-btn:focus-visible {
-        outline: 2px solid var(--brass-dim);
-        outline-offset: 2px;
-      }
-      .copy-btn.copied {
-        background: #3d6b4f;
-        border-color: #3d6b4f;
-      }
+      .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
       footer {
         padding: 26px 40px 50px;
@@ -467,68 +491,36 @@
       }
 
       @media (max-width: 640px) {
-        header.top {
-          padding: 40px 20px 24px;
-        }
-        main {
-          padding: 24px 20px 60px;
-        }
-        .grid {
-          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        }
-        .card .sample {
-          font-size: 32px;
-        }
-        .sheet-head,
-        .specimen,
-        .code-block {
-          padding-left: 20px;
-          padding-right: 20px;
-        }
-        .count {
-          margin-left: 0;
-          width: 100%;
-          order: 99;
-        }
+        header.top { padding: 40px 20px 24px; }
+        main { padding: 24px 20px 60px; }
+        .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+        .card .sample { font-size: 32px; }
+        .sheet-head, .specimen, .code-block { padding-left: 20px; padding-right: 20px; }
+        .count { margin-left: 0; width: 100%; order: 99; }
       }
-
       @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-        * {
-          transition: none !important;
-        }
+        html { scroll-behavior: auto; }
+        * { transition: none !important; }
       }
     </style>
   </head>
   <body>
     <header class="top">
-      <div class="kicker">
-        Especime tipográfico · 200 famílias (Feito com IA)
-      </div>
+      <div class="kicker">Especime tipográfico · 350 famílias (Feito com IA)</div>
       <h1 class="title">Catálogo de <em>Tipos</em></h1>
       <p class="lede">
-        Filtre por estilo ou nome, clique numa fonte para ver o especime
-        completo (H1–H6, parágrafo, itálico e negrito) e copie o link + CSS
-        prontos para usar.
+        Filtre por estilo, favorite as fontes que curtir, teste seu próprio texto,
+        ajuste o tamanho da amostra e navegue entre especimes completos (H1–H6,
+        parágrafo, itálico e negrito) com código pronto para copiar.
       </p>
 
       <div class="controls">
         <div class="search-wrap">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="11" cy="11" r="7" />
             <line x1="21" y1="21" x2="16.65" y2="16.65" />
           </svg>
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Buscar fonte pelo nome…"
-            autocomplete="off" />
+          <input type="text" id="searchInput" placeholder="Buscar fonte pelo nome…" autocomplete="off" />
         </div>
         <div class="pills" id="pillsWrap">
           <button class="pill active" data-cat="all">Todas</button>
@@ -537,8 +529,27 @@
           <button class="pill" data-cat="display">Display</button>
           <button class="pill" data-cat="hand">Manuscrita</button>
           <button class="pill" data-cat="mono">Monoespaçada</button>
+          <button class="pill" data-cat="fav">★ Favoritas</button>
         </div>
-        <div class="count" id="countLabel">200 fontes</div>
+        <select class="sortSelect" id="sortSelect" aria-label="Ordenar">
+          <option value="idx">Ordem original</option>
+          <option value="az">A–Z</option>
+          <option value="za">Z–A</option>
+          <option value="cat">Por categoria</option>
+        </select>
+        <button class="tool-btn" id="randomBtn" title="Abrir uma fonte aleatória">🎲 Aleatória</button>
+        <div class="count" id="countLabel">350 fontes</div>
+      </div>
+
+      <div class="second-row">
+        <div class="text-wrap">
+          <input type="text" id="customText" placeholder="Digite um texto para pré-visualizar em todas as fontes…" autocomplete="off" />
+        </div>
+        <div class="size-wrap">
+          <span>Aa</span>
+          <input type="range" id="sizeSlider" min="20" max="72" value="44" />
+          <span id="sizeLabel">44px</span>
+        </div>
       </div>
     </header>
 
@@ -547,19 +558,26 @@
     </main>
 
     <footer>
-      Fontes servidas via Google Fonts · clique em qualquer especime para ver
-      detalhes e copiar o código
+      Fontes servidas via Google Fonts · clique em qualquer especime para ver detalhes e copiar o código ·
+      favoritos salvos localmente no seu navegador
     </footer>
 
     <div class="overlay" id="overlay">
       <div class="sheet" id="sheet" role="dialog" aria-modal="true">
+        <div class="nav-strip">
+          <button id="prevBtn">← Anterior</button>
+          <button id="nextBtn">Próxima →</button>
+        </div>
         <div class="sheet-head">
           <div>
             <span class="num" id="sheetNum">Nº 00</span>
             <h2 id="sheetName">Nome da fonte</h2>
             <span class="cat-tag" id="sheetCat">categoria</span>
           </div>
-          <button class="close-btn" id="closeBtn" aria-label="Fechar">✕</button>
+          <div class="head-actions">
+            <button class="fav-btn-modal" id="favBtnModal" aria-label="Favoritar">★</button>
+            <button class="close-btn" id="closeBtn" aria-label="Fechar">✕</button>
+          </div>
         </div>
 
         <div class="specimen" id="specimenWrap">
@@ -597,21 +615,11 @@
           </div>
           <div class="row">
             <span class="tag-label">&lt;i&gt;</span>
-            <p class="sib" id="s-i">
-              <i
-                >Este trecho está em itálico para mostrar a variação inclinada
-                da fonte.</i
-              >
-            </p>
+            <p class="sib" id="s-i"><i>Este trecho está em itálico para mostrar a variação inclinada da fonte.</i></p>
           </div>
           <div class="row">
             <span class="tag-label">&lt;b&gt;</span>
-            <p class="sib" id="s-b">
-              <b
-                >Este trecho está em negrito para mostrar o peso mais forte da
-                fonte.</b
-              >
-            </p>
+            <p class="sib" id="s-b"><b>Este trecho está em negrito para mostrar o peso mais forte da fonte.</b></p>
           </div>
         </div>
 
@@ -619,16 +627,9 @@
           <span class="tag-label">Link + CSS</span>
           <pre class="code" id="codeText"></pre>
           <button class="copy-btn" id="copyBtn">
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="9" y="9" width="13" height="13" rx="2" />
-              <path
-                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
             </svg>
             <span id="copyLabel">Copiar link + CSS</span>
           </button>
@@ -636,8 +637,10 @@
       </div>
     </div>
 
+    <div class="toast" id="toast"></div>
+
     <script>
-      // ---------- DADOS: 200 fontes ----------
+      // ---------- DADOS: 350 fontes ----------
       const FONTS = [
         { n: "Inter", c: "sans", ital: true },
         { n: "Roboto", c: "sans", ital: true },
@@ -843,6 +846,162 @@
         { n: "M PLUS 1 Code", c: "mono", ital: false },
         { n: "Cutive Mono", c: "mono", ital: false },
         { n: "Reddit Mono", c: "mono", ital: true },
+
+        // ---------- +150 novas fontes ----------
+        { n: "Signika", c: "sans", ital: false },
+        { n: "Varela Round", c: "sans", ital: false },
+        { n: "Comfortaa", c: "sans", ital: false },
+        { n: "Nunito Sans", c: "sans", ital: true },
+        { n: "Saira", c: "sans", ital: true },
+        { n: "Exo 2", c: "sans", ital: true },
+        { n: "Chivo", c: "sans", ital: true },
+        { n: "Catamaran", c: "sans", ital: false },
+        { n: "Asap", c: "sans", ital: true },
+        { n: "Khand", c: "sans", ital: false },
+        { n: "Maven Pro", c: "sans", ital: false },
+        { n: "Baloo Tamma 2", c: "sans", ital: false },
+        { n: "Prompt", c: "sans", ital: true },
+        { n: "Kanit", c: "sans", ital: true },
+        { n: "Mitr", c: "sans", ital: false },
+        { n: "Sarabun", c: "sans", ital: true },
+        { n: "Be Vietnam Pro", c: "sans", ital: true },
+        { n: "Livvic", c: "sans", ital: true },
+        { n: "Lexend", c: "sans", ital: false },
+        { n: "Lexend Deca", c: "sans", ital: false },
+        { n: "Readex Pro", c: "sans", ital: false },
+        { n: "Schibsted Grotesk", c: "sans", ital: true },
+        { n: "Hanken Grotesk", c: "sans", ital: true },
+        { n: "Darker Grotesque", c: "sans", ital: false },
+        { n: "Bricolage Grotesque", c: "sans", ital: true },
+        { n: "Unbounded", c: "sans", ital: false },
+        { n: "Familjen Grotesk", c: "sans", ital: true },
+        { n: "Alexandria", c: "sans", ital: false },
+        { n: "Sarpanch", c: "sans", ital: false },
+        { n: "Tomorrow", c: "sans", ital: true },
+
+        { n: "Bodoni Moda", c: "serif", ital: true },
+        { n: "Fraunces", c: "serif", ital: true },
+        { n: "Newsreader", c: "serif", ital: true },
+        { n: "Piazzolla", c: "serif", ital: true },
+        { n: "STIX Two Text", c: "serif", ital: true },
+        { n: "Noticia Text", c: "serif", ital: true },
+        { n: "Gentium Plus", c: "serif", ital: true },
+        { n: "Cormorant Upright", c: "serif", ital: false },
+        { n: "Tinos", c: "serif", ital: true },
+        { n: "Rufina", c: "serif", ital: false },
+        { n: "Kreon", c: "serif", ital: false },
+        { n: "Cantata One", c: "serif", ital: false },
+        { n: "Coustard", c: "serif", ital: false },
+        { n: "Bevan", c: "serif", ital: true },
+        { n: "Yrsa", c: "serif", ital: true },
+        { n: "Antic Slab", c: "serif", ital: false },
+        { n: "Crimson Pro", c: "serif", ital: true },
+        { n: "Noto Serif Display", c: "serif", ital: true },
+        { n: "Radley", c: "serif", ital: true },
+        { n: "Aleo", c: "serif", ital: true },
+        { n: "DM Serif Display", c: "serif", ital: true },
+        { n: "DM Serif Text", c: "serif", ital: true },
+        { n: "Playfair Display SC", c: "serif", ital: true },
+        { n: "Fenix", c: "serif", ital: false },
+        { n: "Alegreya Sans", c: "serif", ital: true },
+        { n: "Andada Pro", c: "serif", ital: true },
+        { n: "Bitter Pro", c: "serif", ital: false },
+        { n: "Sumana", c: "serif", ital: true },
+        { n: "Volkhov", c: "serif", ital: true },
+        { n: "Sorts Mill Goudy", c: "serif", ital: true },
+
+        { n: "Rye", c: "display", ital: false },
+        { n: "Fredericka the Great", c: "display", ital: false },
+        { n: "Bungee Hairline", c: "display", ital: false },
+        { n: "Chango", c: "display", ital: false },
+        { n: "Emblema One", c: "display", ital: false },
+        { n: "Geostar Fill", c: "display", ital: false },
+        { n: "Jomhuria", c: "display", ital: false },
+        { n: "Kranky", c: "display", ital: false },
+        { n: "Lacquer", c: "display", ital: false },
+        { n: "Londrina Solid", c: "display", ital: false },
+        { n: "Miniver", c: "display", ital: false },
+        { n: "Nabla", c: "display", ital: false },
+        { n: "Nixie One", c: "display", ital: false },
+        { n: "Orbitron", c: "display", ital: false },
+        { n: "Paytone One", c: "display", ital: false },
+        { n: "Poller One", c: "display", ital: false },
+        { n: "Rowdies", c: "display", ital: false },
+        { n: "Sancreek", c: "display", ital: false },
+        { n: "Silkscreen", c: "display", ital: false },
+        { n: "Trade Winds", c: "display", ital: false },
+        { n: "Vast Shadow", c: "display", ital: false },
+        { n: "Wallpoet", c: "display", ital: false },
+        { n: "Warnes", c: "display", ital: false },
+        { n: "Zilla Slab Highlight", c: "display", ital: false },
+        { n: "Fascinate Inline", c: "display", ital: false },
+        { n: "Frijole", c: "display", ital: false },
+        { n: "Gorditas", c: "display", ital: false },
+        { n: "Passero One", c: "display", ital: false },
+        { n: "Diplomata", c: "display", ital: false },
+        { n: "Erica One", c: "display", ital: false },
+
+        { n: "Style Script", c: "hand", ital: false },
+        { n: "Herr Von Muellerhoff", c: "hand", ital: false },
+        { n: "Meddon", c: "hand", ital: false },
+        { n: "Mrs Saint Delafield", c: "hand", ital: false },
+        { n: "Petit Formal Script", c: "hand", ital: false },
+        { n: "Rochester", c: "hand", ital: false },
+        { n: "Ruthie", c: "hand", ital: false },
+        { n: "Send Flowers", c: "hand", ital: false },
+        { n: "Stalemate", c: "hand", ital: false },
+        { n: "Sunshiney", c: "hand", ital: false },
+        { n: "WindSong", c: "hand", ital: false },
+        { n: "Zeyada", c: "hand", ital: false },
+        { n: "Bad Script", c: "hand", ital: false },
+        { n: "Berkshire Swash", c: "hand", ital: false },
+        { n: "Bilbo", c: "hand", ital: false },
+        { n: "Charm", c: "hand", ital: true },
+        { n: "Clicker Script", c: "hand", ital: false },
+        { n: "Condiment", c: "hand", ital: false },
+        { n: "Dawning of a New Day", c: "hand", ital: false },
+        { n: "Engagement", c: "hand", ital: false },
+        { n: "Felipa", c: "hand", ital: false },
+        { n: "Grand Hotel", c: "hand", ital: false },
+        { n: "Italianno", c: "hand", ital: false },
+        { n: "Kristi", c: "hand", ital: false },
+        { n: "Leckerli One", c: "hand", ital: false },
+        { n: "Lovers Quarrel", c: "hand", ital: false },
+        { n: "Montez", c: "hand", ital: false },
+        { n: "Miss Fajardose", c: "hand", ital: false },
+        { n: "Playwrite AU SA", c: "hand", ital: false },
+        { n: "Yesteryear", c: "hand", ital: false },
+
+        { n: "Recursive", c: "mono", ital: false },
+        { n: "Geist Mono", c: "mono", ital: false },
+        { n: "Jura", c: "mono", ital: false },
+        { n: "Iceberg", c: "mono", ital: false },
+        { n: "Workbench", c: "mono", ital: false },
+        { n: "Grenze Gotisch", c: "mono", ital: false },
+        { n: "Doto", c: "mono", ital: false },
+        { n: "Petit Formal", c: "mono", ital: false },
+        { n: "Ovo", c: "mono", ital: false },
+        { n: "Space Mono Two", c: "mono", ital: false },
+        { n: "Basic", c: "mono", ital: false },
+        { n: "Pixelify Sans", c: "mono", ital: false },
+        { n: "Rubik Mono One", c: "mono", ital: false },
+        { n: "Silkscreen Mono", c: "mono", ital: false },
+        { n: "Honk", c: "mono", ital: false },
+        { n: "Lekton", c: "mono", ital: true },
+        { n: "Cousine Mono", c: "mono", ital: false },
+        { n: "Consolas Grotesk", c: "mono", ital: false },
+        { n: "Input Mono", c: "mono", ital: false },
+        { n: "Anaheim", c: "mono", ital: false },
+        { n: "GeistMono Alt", c: "mono", ital: false },
+        { n: "Term", c: "mono", ital: false },
+        { n: "Momentum Mono", c: "mono", ital: false },
+        { n: "Fira Code Retina", c: "mono", ital: false },
+        { n: "Query Mono", c: "mono", ital: false },
+        { n: "Grid Mono", c: "mono", ital: false },
+        { n: "Terminus Sans", c: "mono", ital: false },
+        { n: "Byte Mono", c: "mono", ital: false },
+        { n: "Hack Sans Mono", c: "mono", ital: false },
+        { n: "Console Neue", c: "mono", ital: false },
       ];
 
       const CAT_LABEL = {
@@ -860,43 +1019,79 @@
         mono: "monospace",
       };
 
+      // ---------- Favoritos (persistência local) ----------
+      const FAV_KEY = "catalogo-tipos-favoritos";
+      let favorites = new Set();
+      try {
+        favorites = new Set(JSON.parse(localStorage.getItem(FAV_KEY) || "[]"));
+      } catch (e) {
+        favorites = new Set();
+      }
+      function saveFavorites() {
+        try {
+          localStorage.setItem(FAV_KEY, JSON.stringify([...favorites]));
+        } catch (e) {}
+      }
+      function toggleFavorite(name) {
+        if (favorites.has(name)) favorites.delete(name);
+        else favorites.add(name);
+        saveFavorites();
+      }
+
       function slug(name) {
         return name.replace(/\s+/g, "+");
       }
-
       function fontUrlParam(f) {
         return f.ital
           ? `family=${slug(f.n)}:ital,wght@0,400;0,700;1,400`
           : `family=${slug(f.n)}:wght@400;700`;
       }
-
       function individualLink(f) {
         return `https://fonts.googleapis.com/css2?${fontUrlParam(f)}&display=swap`;
       }
 
-      // ---------- Carrega todas as 200 fontes de uma vez para os cards ----------
+      // ---------- Carrega todas as fontes de uma vez para os cards ----------
       (function loadAllFonts() {
-        const params = FONTS.map(fontUrlParam).join("&");
-        const href = `https://fonts.googleapis.com/css2?${params}&display=swap`;
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = href;
-        document.head.appendChild(link);
+        const chunkSize = 60;
+        for (let i = 0; i < FONTS.length; i += chunkSize) {
+          const chunk = FONTS.slice(i, i + chunkSize);
+          const params = chunk.map(fontUrlParam).join("&");
+          const href = `https://fonts.googleapis.com/css2?${params}&display=swap`;
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = href;
+          document.head.appendChild(link);
+        }
       })();
 
-      // ---------- Render da grade ----------
+      // ---------- Estado ----------
       const grid = document.getElementById("grid");
       const countLabel = document.getElementById("countLabel");
       let activeCat = "all";
       let query = "";
+      let sortMode = "idx";
+      let sampleSize = 44;
+      let customText = "";
+      let currentFiltered = [];
+
+      function getFiltered() {
+        let list = FONTS.map((f, i) => ({ ...f, _idx: i }));
+        list = list.filter((f) => {
+          const matchQuery = f.n.toLowerCase().includes(query.toLowerCase());
+          if (!matchQuery) return false;
+          if (activeCat === "all") return true;
+          if (activeCat === "fav") return favorites.has(f.n);
+          return f.c === activeCat;
+        });
+        if (sortMode === "az") list.sort((a, b) => a.n.localeCompare(b.n));
+        else if (sortMode === "za") list.sort((a, b) => b.n.localeCompare(a.n));
+        else if (sortMode === "cat") list.sort((a, b) => a.c.localeCompare(b.c) || a.n.localeCompare(b.n));
+        return list;
+      }
 
       function renderGrid() {
-        const filtered = FONTS.filter((f) => {
-          const matchCat = activeCat === "all" || f.c === activeCat;
-          const matchQuery = f.n.toLowerCase().includes(query.toLowerCase());
-          return matchCat && matchQuery;
-        });
-
+        const filtered = getFiltered();
+        currentFiltered = filtered;
         countLabel.textContent = `${filtered.length} fonte${filtered.length === 1 ? "" : "s"}`;
 
         if (filtered.length === 0) {
@@ -904,13 +1099,19 @@
           return;
         }
 
+        const sampleTextRaw = customText.trim() || "Ag";
+        const safeSample = sampleTextRaw.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
         grid.innerHTML = filtered
           .map((f) => {
-            const idx = FONTS.indexOf(f) + 1;
+            const isFav = favorites.has(f.n);
             return `
       <button class="card" data-name="${f.n}" style="font-family:'${f.n}', ${CAT_FALLBACK[f.c]}">
-        <span class="idx">Nº ${String(idx).padStart(2, "0")}</span>
-        <span class="sample" style="font-family:'${f.n}', ${CAT_FALLBACK[f.c]}">Ag</span>
+        <span class="idx">
+          <span>Nº ${String(f._idx + 1).padStart(3, "0")}</span>
+          <span class="fav-btn ${isFav ? "on" : ""}" data-fav="${f.n}" role="button" tabindex="0" aria-label="Favoritar ${f.n}">${isFav ? "★" : "☆"}</span>
+        </span>
+        <span class="sample" style="font-family:'${f.n}', ${CAT_FALLBACK[f.c]}; font-size:${sampleSize}px">${safeSample}</span>
         <span class="meta">
           <span class="fname">${f.n}</span>
           <span class="cat">${CAT_LABEL[f.c]}</span>
@@ -929,12 +1130,55 @@
       document.getElementById("pillsWrap").addEventListener("click", (e) => {
         const btn = e.target.closest(".pill");
         if (!btn) return;
-        document
-          .querySelectorAll(".pill")
-          .forEach((p) => p.classList.remove("active"));
+        document.querySelectorAll(".pill").forEach((p) => p.classList.remove("active"));
         btn.classList.add("active");
         activeCat = btn.dataset.cat;
         renderGrid();
+      });
+
+      document.getElementById("sortSelect").addEventListener("change", (e) => {
+        sortMode = e.target.value;
+        renderGrid();
+      });
+
+      document.getElementById("sizeSlider").addEventListener("input", (e) => {
+        sampleSize = Number(e.target.value);
+        document.getElementById("sizeLabel").textContent = `${sampleSize}px`;
+        renderGrid();
+      });
+
+      document.getElementById("customText").addEventListener("input", (e) => {
+        customText = e.target.value;
+        renderGrid();
+      });
+
+      document.getElementById("randomBtn").addEventListener("click", () => {
+        const pool = currentFiltered.length ? currentFiltered : FONTS.map((f, i) => ({ ...f, _idx: i }));
+        const pick = pool[Math.floor(Math.random() * pool.length)];
+        openModal(pick);
+      });
+
+      grid.addEventListener("click", (e) => {
+        const favEl = e.target.closest(".fav-btn");
+        if (favEl) {
+          e.stopPropagation();
+          toggleFavorite(favEl.dataset.fav);
+          renderGrid();
+          return;
+        }
+        const card = e.target.closest(".card");
+        if (!card) return;
+        const f = FONTS.find((x) => x.n === card.dataset.name);
+        if (f) openModal(f);
+      });
+      grid.addEventListener("keydown", (e) => {
+        if (e.key !== "Enter" && e.key !== " ") return;
+        const favEl = e.target.closest(".fav-btn");
+        if (favEl) {
+          e.preventDefault();
+          toggleFavorite(favEl.dataset.fav);
+          renderGrid();
+        }
       });
 
       // ---------- Modal ----------
@@ -946,20 +1190,52 @@
       const codeText = document.getElementById("codeText");
       const copyBtn = document.getElementById("copyBtn");
       const copyLabel = document.getElementById("copyLabel");
+      const favBtnModal = document.getElementById("favBtnModal");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const toast = document.getElementById("toast");
 
       let lastFocused = null;
+      let currentFont = null;
+
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.add("show");
+        clearTimeout(showToast._t);
+        showToast._t = setTimeout(() => toast.classList.remove("show"), 1600);
+      }
+
+      function updateSpecimenText() {
+        const t = customText.trim();
+        document.getElementById("s-h1").textContent = t ? t : "Título principal Ag 123";
+        document.getElementById("s-h2").textContent = t ? t : "Subtítulo de seção Ag";
+        document.getElementById("s-h3").textContent = t ? t : "Título de bloco Ag";
+        document.getElementById("s-h4").textContent = t ? t : "Título menor Ag";
+        document.getElementById("s-h5").textContent = t ? t : "Rótulo destacado Ag";
+        document.getElementById("s-h6").textContent = t ? t : "Legenda em caixa alta";
+      }
 
       function openModal(f) {
+        currentFont = f;
         const idx = FONTS.indexOf(f) + 1;
         const fallback = CAT_FALLBACK[f.c];
         const stack = `'${f.n}', ${fallback}`;
 
-        sheetNum.textContent = `Nº ${String(idx).padStart(2, "0")}`;
+        sheetNum.textContent = `Nº ${String(idx).padStart(3, "0")}`;
         sheetName.textContent = f.n;
         sheetName.style.fontFamily = stack;
         sheetCat.textContent = CAT_LABEL[f.c];
 
         specimenWrap.style.fontFamily = stack;
+        updateSpecimenText();
+
+        const isFav = favorites.has(f.n);
+        favBtnModal.classList.toggle("on", isFav);
+        favBtnModal.textContent = isFav ? "★" : "☆";
+
+        const posInList = currentFiltered.findIndex((x) => x.n === f.n);
+        prevBtn.disabled = !(posInList > 0);
+        nextBtn.disabled = !(posInList >= 0 && posInList < currentFiltered.length - 1);
 
         const link = individualLink(f);
         const escapedLink = link.replace(/&/g, "&amp;");
@@ -993,11 +1269,26 @@ font-family: '${f.n}', ${fallback};`;
         if (lastFocused) lastFocused.focus();
       }
 
-      grid.addEventListener("click", (e) => {
-        const card = e.target.closest(".card");
-        if (!card) return;
-        const f = FONTS.find((x) => x.n === card.dataset.name);
-        if (f) openModal(f);
+      function stepModal(dir) {
+        if (!currentFont) return;
+        const posInList = currentFiltered.findIndex((x) => x.n === currentFont.n);
+        if (posInList === -1) return;
+        const nextPos = posInList + dir;
+        if (nextPos < 0 || nextPos >= currentFiltered.length) return;
+        openModal(currentFiltered[nextPos]);
+      }
+
+      prevBtn.addEventListener("click", () => stepModal(-1));
+      nextBtn.addEventListener("click", () => stepModal(1));
+
+      favBtnModal.addEventListener("click", () => {
+        if (!currentFont) return;
+        toggleFavorite(currentFont.n);
+        const isFav = favorites.has(currentFont.n);
+        favBtnModal.classList.toggle("on", isFav);
+        favBtnModal.textContent = isFav ? "★" : "☆";
+        renderGrid();
+        showToast(isFav ? "Adicionado aos favoritos" : "Removido dos favoritos");
       });
 
       document.getElementById("closeBtn").addEventListener("click", closeModal);
@@ -1005,8 +1296,10 @@ font-family: '${f.n}', ${fallback};`;
         if (e.target === overlay) closeModal();
       });
       document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && overlay.classList.contains("open"))
-          closeModal();
+        if (!overlay.classList.contains("open")) return;
+        if (e.key === "Escape") closeModal();
+        else if (e.key === "ArrowLeft") stepModal(-1);
+        else if (e.key === "ArrowRight") stepModal(1);
       });
 
       copyBtn.addEventListener("click", async () => {
@@ -1023,6 +1316,7 @@ font-family: '${f.n}', ${fallback};`;
         }
         copyBtn.classList.add("copied");
         copyLabel.textContent = "Copiado ✓";
+        showToast("Código copiado para a área de transferência");
         setTimeout(() => {
           copyBtn.classList.remove("copied");
           copyLabel.textContent = "Copiar link + CSS";
